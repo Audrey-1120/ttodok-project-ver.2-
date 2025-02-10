@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:tx="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="/css/wordstudy.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wordstudy</title>
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<div class="wordstudy-page" id="wordstudy-page">
+
+    <header class="menu" id="menu">
+        <div class="wordstudy-logo" id="wordstudy-logo">
+            <a href="/main_ver2">
+                <img class="wordstudy-logo" src="../images/wordstudy_studylogo.png" />
+            </a>
+
+        </div>
+
+        <div class="wordstudy-menubar" id="wordstudy-menubar">
+            <a href="/logout">로그아웃&emsp;</a>
+            <a href="/myPage">마이페이지&emsp;</a>
+        </div>
+    </header>
+
+    <div class="wordstudy-form" id="wordstudy-form">
+
+
+        <img class="wordstudy-rabbit" src="../images/rabbit.png" />
+
+        <div class="wordstudy-gostudy">
+            <h1 class="wordstudy-letsstudy">단어를 공부해봐요!</h1>
+        </div>
+
+        <div class="wordstudy-title">
+            <h3 class="wordstudy-title">혹부리 영감(임시)</h3>
+        </div>
+
+        <div id="wordstudy-slide" class="wordstudy-slide">
+
+            <div id="slider">
+                <button class="btn prev">
+                    <</button> <div class="wrapper">
+                <div class="items">
+
+                    <div class="item">
+                        <div class="word-content">
+                            <p class="word-name"></p><br>
+                            <p class="word-mean"></p><br>
+                            <p class="word-plusMean"></p>
+                        </div>
+                    </div>
+
+                    <div th:each="wordEntity : ${wordEntities}" class="item">
+                        <div class="word-content">
+                            <p class="word-name" th:text="${wordEntity.word}"></p><br>
+                            <p class="word-mean" th:text="${wordEntity.wordMean}"></p><br>
+                            <p class="word-plusMean"  th:text="${wordEntity.wordEx}"></p>
+                            <img class="volume-up" src="../images/volume-up.png" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <button class="btn next">></button>
+            </div>
+        </div>
+
+        <div class="wordstudy-button" id="join-button">
+                <input class="wordstudybutton" type="submit" value="다음 단계" id="wordStudyButton">
+
+        </div>
+
+        <div class="footmenu" id="footmenu">
+            <div class="wordstudy-backbutton" id="wordstudy-backbutton">
+                <a href="/main_ver2">뒤로가기</a>
+            </div>
+
+            <div class="wordstudyhome">
+                <a href="/main_ver2">
+                    <img class="wordstudy-home" src="../images/wordstudy_home.png" />
+                    <p>홈으로</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/js/wordstudy.js}"></script>
+
+</body>
+
+</html>
+

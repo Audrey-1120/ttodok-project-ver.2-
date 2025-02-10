@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>또독</title>
+
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main_ver2.css?afterfit ">
+</head>
+
+<body>
+  <div id="container1">
+    <header id="header">
+      <img id="mainLogo" src="../images/ttodokLogo2.png" height="70">
+      <ul id="headerul">
+        <li>또독이란?</li>
+        <li>학습하기</li>
+        <li id="pointshopBtn" onclick="redirectToPointshop()">포인트 상점</li>
+        <li id="homeMyPageBtn" onclick="redirectToMypage()"> 마이페이지  </li>
+      </ul>
+    </header>
+
+
+    <section id="contents">
+      <div id="overlay-container-word">
+        <img src="/images/wordList_ver2.png" id="todayWordList">
+        <p id="overlay-text-word" th:text="${tdwordList[0].tdword}">단어</p>
+        <p id="overlay-text-wordExplain" th:text="${tdwordList[0].tdwordMean}">설명</p>
+        <p id="overlay-text-wordEx" th:text="${tdwordList[0].tdwordEx}">예시</p>
+      </div>
+    </section>
+
+    <aside id="sidebar">
+      <div id="overlay-container">
+        <img src="/images/loginBtn_ver2.png" id="loginBtn_ver2" height="150">
+        <p id="overlay-text">
+          <span class="user-nick" th:text="${userNick != null ? userNick : 'Guest'}"></span> 님! 반가워요
+        </p>
+        <img src="/images/line.png" id="line-image"  width="240">
+        <p id="overlay-text-pointshop">내 포인트</p>
+        <p id="overlay-text-pointview" th:text="${memberPoint} + '점'"></p>
+        <button id="overlay-text-gopointshop" onclick="redirectToPointshop()">포인트상점 </button>
+      </div>
+    </aside>
+
+  <div id="container2">
+    <h1 id="book_text">재미있는 이야기가 가득!</h1>
+    <section id="book">
+      <ul id="booklistul_1">
+        <li id="bookList1">
+          <h2 id="bookNameNum1">혹부리영감</h2>
+          <img src="/images/book1.png" onclick="redirectToWordLearningPage('t001')"> <
+        </li>
+        <li id="bookList2">
+          <h2 id="bookNameNum2">임금님 귀는 당나귀 귀</h2>
+          <img src="/images/book1.png" onclick="redirectToWordLearningPage('t002')">
+        </li>
+        <li id="bookList3">
+          <h2 id="bookNameNum3">의좋은 형제</h2>
+          <img src="/images/book1.png" onclick="redirectToWordLearningPage('t003')">
+        </li>
+        <li id="bookList4">
+          <h2 id="bookNameNum4">토끼와 간</h2>
+          <img src="/images/book1.png" onclick="redirectToWordLearningPage('t004')">
+        </li>
+      </ul>
+      <ul id="booklistul_2">
+        <li id="bookList5">
+          <h2 id="bookNameNum5">컵케이크</h2>
+          <img src="/images/book1.png">
+        </li>
+        <li id="bookList6">
+          <h2 id="bookNameNum6">우주비행사</h2>
+          <img src="/images/book1.png"></li>
+        <li id="bookList7">
+          <h2 id="bookNameNum7">흥부전</h2>
+          <img src="/images/book1.png"></li>
+        <li id="bookList8">
+          <h2 id="bookNameNum8">쥬라기공원</h2>
+          <img src="/images/book1.png"></li>
+      </ul>
+
+    </section>
+
+    <section id="point_sotre">
+      <h1 id="storeText">포인트로 상품을 구매할 수 있어요!</h1>
+
+      <div class="gifticon_list">
+        <div class="set_gifticon">
+          <div class="gifticon1">
+            <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[0] : '기프티콘'}"></div>
+            <img class="gifticon_img" src="../images/banana.jpg" title="기프티콘1">
+            <div class="gifticon_price" th:text="${productPoint != null and productPoint.size() > 0 ? productPoint[0] + 'P' : '기본값'}"></div>
+
+          </div>
+
+          <div class="gifticon2">
+            <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[1] : '기프티콘'}"></div>
+            <img class="gifticon_img" src="../images/sour.png" title="기프티콘2">
+
+            <div class="gifticon_price" th:text="${productPoint != null and productPoint.size() > 0 ? productPoint[1] + 'P' : '기본값'}">300p</div>
+          </div>
+
+          <div class="gifticon3">
+            <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[2] : '기프티콘'}"></div>
+            <img class="gifticon_img" src="../images/choco.png" title="기프티콘3">
+            <div class="gifticon_price" th:text="${productPoint != null and productPoint.size() > 0 ? productPoint[2] + 'P' : '기본값'}">250p</div>
+
+          </div>
+
+          <div class="gifticon4">
+            <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[3] : '기프티콘'}">기프티콘4</div>
+
+            <img class="gifticon_img" src="../images/vita.jpg" title="기프티콘4">
+            <div class="gifticon_price" th:text="${productPoint != null and productPoint.size() > 0 ? productPoint[3] + 'P' : '기본값'}">100p</div>
+
+          </div>
+        </div>
+      </div>
+      <button id="storeGoBtn" type="submit" onclick="redirectToPointshop()"> 바로가기 </button>
+    </section>
+
+    <footer id="footer">
+      <img src="/images/ttodokLogo3.png" id="footerLogo">
+    </footer>
+
+  </div>
+  </div>
+
+</body>
+</html>
+
+<script>
+  function redirectToMypage() {
+      window.location.href = "/myPage";
+  }
+
+  function redirectToPointshop() {
+      window.location.href="/pointshop";
+  }
+
+  function redirectToWordLearningPage(imageNumber) {
+      window.location.href = "/wordstudy?card=" + imageNumber;
+  }
+
+</script>

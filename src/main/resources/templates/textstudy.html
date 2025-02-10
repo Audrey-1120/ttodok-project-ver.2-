@@ -1,0 +1,61 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/textstudy.css" />
+    <title>textstudy</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.4.min.js">
+    </script>
+</head>
+<body style="background-color:#81C370;">
+
+<div class="textstudy-page" id="textstudy-page">
+
+    <header class="menu" id="menu">
+        <div class="textstudy-logo" id="textstudy-logo">
+            <a href="/mainPage">
+                <img class="textstudy-logo" src="../images/wordstudy_studylogo.png" />
+            </a>
+        </div>
+
+        <div class="textstudy-menubar" id="textstudy-menubar">
+            <a href="login.html">로그아웃&emsp;</a>
+            <a href="/myPage">마이페이지&emsp;</a>
+        </div>
+    </header>
+
+    <div class="textstudy-form" id="textstudy-form">
+
+        <img class="textstudy-rabbit" src="../images/rabbit.png" />
+
+        <div class="textstudy-gostudy">
+            <h1 class="textstudy-letsstudy">글을 소리내어 읽어보세요!</h1>
+            <img class="textstudy-speaker" src="../images/speaker.png" alt="음성 출력 버튼" id="audioButton">
+        </div>
+
+        <div class="textstudy-title">
+        </div>
+
+        <div id="text-container" class="text-container">
+            <div class="text">
+                <p class="text-content"></p>
+            </div>
+        </div>
+
+        <div class="textstudy-button" id="textstudy-button">
+            <input class="textstudybutton" type="submit" value="다음 단계" id="textStudyButton">
+        </div>
+
+        <div class="footmenu" id="footmenu">
+            <div class="textstudy-backbutton" id="textstudy-backbutton">
+                <a href="/mainPage">뒤로가기</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/js/textstudy.js}"></script>
+
+</body>
+</html>

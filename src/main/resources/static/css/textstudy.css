@@ -1,0 +1,145 @@
+@import "reset.css";
+
+body {
+
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: 14px;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #81C370;
+}
+
+/*전체 틀*/
+v .textstudy-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+/*상단 로고 및 메뉴바*/
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/*상단 메뉴*/
+.textstudy-menubar {
+  margin-right: 1%;
+  font-weight: 500;
+}
+
+/*회원가입 페이지 로고*/
+.textstudy-logo {
+  width: 93px;
+  height: 53px;
+  flex-shrink: 0;
+  margin: 0.5rem 76.3rem 1rem 1rem;
+}
+
+/*수정*/
+/*글을 소리내어 읽어보세요*/
+.textstudy-gostudy {
+    display: flex;
+    align-items: center;
+    margin: 10px 220px 8px 220px;
+    color: #000000;
+    font-weight: 800;
+    text-align: center;
+}
+
+.textstudy-letsstudy {
+    font-size: 49px;
+    width: 75%;
+    text-align: right;
+}
+
+.textstudy-title {
+    color: #000000;
+    font-size: 21px;
+    font-weight: 800;
+    width: 75%;
+    margin: 10px 220px 8px 220px;
+    text-align: right;
+}
+
+.textstudy-speaker {
+    /* 음성 출력 버튼 */
+    width: 45px;
+    height: 45px;
+    padding-left: 10px;
+}
+
+.textstudy-rabbit {
+  /*토끼*/
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    left: 25%;
+    top: 5%;
+}
+
+.text-name {
+    margin-top: 2%;
+    font-size: 100px;
+}
+
+/* 다음단계 넘어가기 버튼 스타일 */
+.textstudybutton {
+    padding: 10px 40px;
+    box-shadow: 3px 4px 4px gray;
+    background-color: #3b9e23;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 800;
+    font-family: 'Pretendard';
+}
+
+/* 다음단계 넘어가기 버튼 */
+.textstudy-button {
+    text-align: center;
+    margin-top: 2%;
+    /* display: none; 초기에는 숨김 상태로 설정 */
+}
+
+/*하단메뉴*/
+.footmenu {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+}
+
+/*뒤로가기*/
+.textstudy-backbutton {
+    width: 90%;
+    font-size: 28px;
+    font-weight: 800;
+    margin-left: 2%;
+}
+
+.text .text-content {
+    /*스크롤바*/
+    overflow: auto; /* 수직 스크롤을 허용하도록 설정 */
+    direction: ltr;
+
+    font-size: 35px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    width: 80rem;
+    height: 30rem;
+    margin: 0 auto; /* 수평 가운데 정렬을 위해 추가 */
+    border-radius: 1rem;
+    background-color: #ffffff;
+    font-weight: 700;
+    color: #000000;
+
+    word-break: break-all; /*문장 다음줄로 보내기*/
+    overflow-wrap: break-word;
+    white-space: pre-line; /* 텍스트 내에서의 줄 바꿈 처리 */
+}
